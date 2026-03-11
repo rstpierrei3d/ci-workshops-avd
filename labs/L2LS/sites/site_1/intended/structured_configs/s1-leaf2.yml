@@ -8,9 +8,6 @@ banners:
 
     EOF
 
-
-    # Syslog
-
     '
 config_end: true
 daemon_terminattr:
