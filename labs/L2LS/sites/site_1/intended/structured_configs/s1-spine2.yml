@@ -6,7 +6,12 @@ aaa_root:
 banners:
   motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
 
-    EOF'
+    EOF
+
+
+    # Syslog
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -118,6 +123,15 @@ local_users:
   sha512_password: $6$arista$npSZUlGK0lP4AqXuVQHpxMQY7JHErcS6iDHjSCZIOGGXxhIKvVB86PwhhIZsmLMD2Gc0SU4Mx3FL1gq5xVwtX/
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCVJdkIt2yRVAHe+nCX+QoAgoKwD0vV9wmXivo5+ovxV62ICOMvfCZyr1eJOAqSpB3pNqdj88OS4xeeATMFnWpq2dGgM1ZAjSec7s4QGcpUAECEiJRspNp3pAF6+YC0S4kd53s3E1M2jPIqz3/4O59m+4x/slUN6jiO7vLdUZ1tXrr0swIZzd3OUtj2erz7Ntu04j/W010oq3myQSon5uXdrrUHuKv2Dz3SDKeChF/tfgEhNBgudaOlHU3xwUxdaWHxdcSSwAVkz/6ml0eG49V7w26rCGB3pRCqUqhnQeV0tojG5AEPyr/FX+NBejM6li05jESW39sIkf7h8XreSVhD
     arista@quebec-jour2-5-feedfbfb-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
